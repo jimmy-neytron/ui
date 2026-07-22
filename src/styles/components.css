@@ -311,6 +311,12 @@
   line-height: 1;
 }
 
+.cui-input__clear {
+  inline-size: 1em;
+  block-size: 1em;
+  padding: 0;
+}
+
 .cui-input__clear:hover:not(:disabled),
 .cui-select__clear:hover:not(:disabled),
 .cui-select__chip-remove:hover:not(:disabled),
