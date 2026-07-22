@@ -12,6 +12,8 @@ export default tseslint.config(
       '.artifacts/**',
       'examples/consumer/dist/**',
       'examples/consumer/node_modules/**',
+      'docs/.vitepress/cache/**',
+      'docs/.vitepress/dist/**',
     ],
   },
   js.configs.recommended,
@@ -46,3 +48,4 @@ export default tseslint.config(
     },
   },
 );
+
