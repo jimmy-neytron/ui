@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+.artifacts
+playground-dist
+examples/consumer/dist
+examples/consumer/node_modules
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode
+.idea

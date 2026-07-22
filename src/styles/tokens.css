@@ -1,0 +1,54 @@
+:root {
+  --cui-neutral-0: #ffffff;
+  --cui-neutral-50: #faf9f7;
+  --cui-neutral-100: #f2efe9;
+  --cui-neutral-200: #e5e0d7;
+  --cui-neutral-300: #d4cdc1;
+  --cui-neutral-400: #a9a095;
+  --cui-neutral-500: #7d756c;
+  --cui-neutral-600: #5c554e;
+  --cui-neutral-700: #3d3833;
+  --cui-neutral-800: #25221f;
+  --cui-neutral-900: #171513;
+  --cui-neutral-950: #090909;
+
+  --cui-blue-500: #3578e5;
+  --cui-blue-600: #2867cd;
+  --cui-green-500: #1f9d62;
+  --cui-amber-500: #c88712;
+  --cui-red-500: #d84a42;
+  --cui-red-600: #bd3933;
+
+  --cui-space-0: 0;
+  --cui-space-1: 0.25rem;
+  --cui-space-2: 0.5rem;
+  --cui-space-3: 0.75rem;
+  --cui-space-4: 1rem;
+  --cui-space-5: 1.25rem;
+  --cui-space-6: 1.5rem;
+  --cui-space-8: 2rem;
+
+  --cui-font-size-xs: 0.75rem;
+  --cui-font-size-sm: 0.8125rem;
+  --cui-font-size-md: 0.875rem;
+  --cui-font-size-lg: 1rem;
+  --cui-font-weight-normal: 400;
+  --cui-font-weight-medium: 500;
+  --cui-font-weight-semibold: 600;
+  --cui-line-height-tight: 1.25;
+  --cui-line-height-normal: 1.5;
+
+  --cui-radius-1: 0.375rem;
+  --cui-radius-2: 0.5625rem;
+  --cui-radius-3: 0.75rem;
+  --cui-radius-pill: 999px;
+
+  --cui-duration-fast: 120ms;
+  --cui-duration-normal: 180ms;
+  --cui-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --cui-easing-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --cui-z-dropdown: 40;
+  --cui-opacity-disabled: 0.52;
+  --cui-opacity-loading: 0.72;
+}

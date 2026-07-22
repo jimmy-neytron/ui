@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@compact-ui/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "playground/**/*.ts",
+    "playground/**/*.vue",
+    "vite.config.ts",
+    "vite.playground.config.ts",
+    "vitest.config.ts",
+    "eslint.config.js"
+  ],
+  "exclude": [
+    "dist",
+    "coverage",
+    "examples/consumer",
+    "node_modules"
+  ]
+}
