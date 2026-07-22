@@ -13,7 +13,7 @@ export default defineConfig({
       { text: 'Руководство', link: '/guide/getting-started' },
       { text: 'Компоненты', link: '/components/button' },
       { text: 'Темы', link: '/guide/theming' },
-      { text: 'v0.1.2', link: `${repositoryUrl}/releases` },
+      { text: 'v0.1.3', link: `${repositoryUrl}/releases` },
     ],
     sidebar: [
       { text: 'Начало работы', items: [
