@@ -2,7 +2,7 @@
 
 Лёгкая ESM-first UI-библиотека для Vue 3: четыре полностью типизированных компонента, CSS Custom Properties, светлая/тёмная/системная тема, гибкая настройка цветов, скруглений, типографики и отступов, SSR-safe реализация и проверяемый npm-процесс от playground до Trusted Publishing.
 
-> npm-пакет: `@jimmy-neytron/compact-ui`. Исходный код: `github.com/jimmy-neytron/ui`.
+> npm-пакет: `@neytron/compact-ui`. Исходный код: `github.com/jimmy-neytron/ui`.
 
 ## Возможности
 
@@ -26,7 +26,7 @@
 ## Установка
 
 ```bash
-npm install @jimmy-neytron/compact-ui
+npm install @neytron/compact-ui
 ```
 
 Vue должен быть установлен в приложении-потребителе:
@@ -40,7 +40,7 @@ npm install vue
 Импортируйте стили один раз в entry приложения:
 
 ```ts
-import '@jimmy-neytron/compact-ui/styles.css';
+import '@neytron/compact-ui/styles.css';
 ```
 
 ## Root imports
@@ -51,16 +51,16 @@ import {
   UiInput,
   UiTextarea,
   UiSelect,
-} from '@jimmy-neytron/compact-ui';
+} from '@neytron/compact-ui';
 ```
 
 ## Direct imports
 
 ```ts
-import { UiButton } from '@jimmy-neytron/compact-ui/button';
-import { UiInput } from '@jimmy-neytron/compact-ui/input';
-import { UiTextarea } from '@jimmy-neytron/compact-ui/textarea';
-import { UiSelect } from '@jimmy-neytron/compact-ui/select';
+import { UiButton } from '@neytron/compact-ui/button';
+import { UiInput } from '@neytron/compact-ui/input';
+import { UiTextarea } from '@neytron/compact-ui/textarea';
+import { UiSelect } from '@neytron/compact-ui/select';
 ```
 
 Direct imports полезны, когда сборщик приложения не выполняет автоматическое tree shaking root entry.
@@ -76,7 +76,7 @@ import type {
   UiTextareaResize,
   UiSelectOption,
   UiSelectValue,
-} from '@jimmy-neytron/compact-ui';
+} from '@neytron/compact-ui';
 ```
 
 ## Controlled usage и `v-model`
@@ -179,7 +179,7 @@ export interface UiSelectOption<TValue extends UiSelectValue = UiSelectValue> {
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { UiSelectOption, UiSelectValue } from '@jimmy-neytron/compact-ui';
+import type { UiSelectOption, UiSelectValue } from '@neytron/compact-ui';
 
 const value = ref<UiSelectValue | null>(null);
 const options: UiSelectOption[] = [
@@ -375,8 +375,8 @@ Plugin не требуется:
 
 ```vue
 <script setup lang="ts">
-import { UiButton } from '@jimmy-neytron/compact-ui/button';
-import '@jimmy-neytron/compact-ui/styles.css';
+import { UiButton } from '@neytron/compact-ui/button';
+import '@neytron/compact-ui/styles.css';
 </script>
 
 <template>
@@ -388,7 +388,7 @@ CSS обычно импортируют один раз в `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  css: ['@jimmy-neytron/compact-ui/styles.css'],
+  css: ['@neytron/compact-ui/styles.css'],
 });
 ```
 

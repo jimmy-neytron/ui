@@ -34,7 +34,7 @@ cd compact-ui
 
 ```json
 {
-  "name": "@jimmy-neytron/compact-ui",
+  "name": "@neytron/compact-ui",
   "author": "YOUR_NAME",
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@ Scope `jimmy-neytron` должен принадлежать вашему npm-а�
 Проверьте, что имя пакета свободно:
 
 ```bash
-npm view @jimmy-neytron/compact-ui name
+npm view @neytron/compact-ui name
 ```
 
 Ошибка `E404` обычно означает, что такой пакет ещё не опубликован.
@@ -397,8 +397,8 @@ npm publish --access public
 После публикации проверьте:
 
 ```bash
-npm view @jimmy-neytron/compact-ui version
-npm view @jimmy-neytron/compact-ui dist-tags
+npm view @neytron/compact-ui version
+npm view @neytron/compact-ui dist-tags
 ```
 
 И установите пакет в отдельном временном приложении:
@@ -407,7 +407,7 @@ npm view @jimmy-neytron/compact-ui dist-tags
 npm create vite@latest compact-ui-smoke -- --template vue-ts
 cd compact-ui-smoke
 npm install
-npm install @jimmy-neytron/compact-ui
+npm install @neytron/compact-ui
 ```
 
 ## 9. GitHub Environment для защищённой публикации
@@ -563,7 +563,7 @@ Publish workflow:
 После успеха проверьте:
 
 ```bash
-npm view @jimmy-neytron/compact-ui version
+npm view @neytron/compact-ui version
 ```
 
 ## 12. Ручной запуск publish workflow

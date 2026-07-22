@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { UiButton, UiTextarea, type UiSelectOption, type UiSelectValue } from '@jimmy-neytron/compact-ui';
-import { UiInput } from '@jimmy-neytron/compact-ui/input';
-import { UiSelect } from '@jimmy-neytron/compact-ui/select';
+import { UiButton, UiTextarea, type UiSelectOption, type UiSelectValue } from '@neytron/compact-ui';
+import { UiInput } from '@neytron/compact-ui/input';
+import { UiSelect } from '@neytron/compact-ui/select';
 
 const name = ref('Consumer app');
 const notes = ref('Installed from the generated npm tarball.');

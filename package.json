@@ -1,5 +1,5 @@
 {
-  "name": "@jimmy-neytron/compact-ui",
+  "name": "@neytron/compact-ui",
   "version": "0.1.0",
   "description": "Lightweight and customizable Vue 3 UI component library",
   "type": "module",
