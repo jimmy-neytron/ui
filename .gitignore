@@ -12,3 +12,5 @@ examples/consumer/node_modules
 .DS_Store
 .vscode
 .idea
+docs/.vitepress/cache
+docs/.vitepress/dist

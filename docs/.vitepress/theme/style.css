@@ -1,0 +1,68 @@
+:root {
+  --vp-c-brand-1: #3b6fd8;
+  --vp-c-brand-2: #2f5fbe;
+  --vp-c-brand-3: #2853a6;
+  --vp-c-brand-soft: rgba(59, 111, 216, 0.14);
+  --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.VPHome .VPHero .name { max-width: 720px; letter-spacing: -0.04em; }
+.VPHome .VPHero .text {
+  max-width: 760px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+.VPHome .VPHero .tagline { max-width: 640px; }
+
+.demo-frame {
+  margin: 20px 0;
+  overflow: visible;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+
+.demo-frame__header {
+  display: grid;
+  gap: 3px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  font-size: 13px;
+}
+
+.demo-frame__header span { color: var(--vp-c-text-2); }
+
+.demo-frame__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  padding: 24px;
+}
+
+.demo-frame__content > .cui-field { width: min(100%, 360px); }
+
+.component-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.component-gallery__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.vp-doc table { display: table; width: 100%; font-size: 14px; }
+.vp-doc th { text-align: left; white-space: nowrap; }
+.vp-doc td:first-child code { white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .component-gallery { grid-template-columns: 1fr; }
+  .demo-frame__content { padding: 16px; }
+}
