@@ -4,8 +4,8 @@
     "private":  true,
     "type":  "module",
     "scripts":  {
-                    "dev":  "node ../scripts/generate-api-docs.mjs \u0026\u0026 vitepress dev .",
-                    "build":  "node ../scripts/generate-api-docs.mjs \u0026\u0026 vitepress build .",
+                    "dev":  "node scripts/generate-api-docs.mjs \u0026\u0026 vitepress dev .",
+                    "build":  "node scripts/generate-api-docs.mjs \u0026\u0026 vitepress build .",
                     "preview":  "vitepress preview ."
                 },
     "dependencies":  {

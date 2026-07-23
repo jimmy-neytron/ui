@@ -2,7 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import ts from 'typescript';
 
-const root = resolve(import.meta.dirname, '..');
+const root = resolve(import.meta.dirname, '../..');
 const componentsDir = join(root, 'src/components');
 const output = join(root, 'docs/.vitepress/generated/api.json');
 const defaults = {
