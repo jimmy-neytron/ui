@@ -29,3 +29,19 @@ export type { UiSwitchProps } from './components/switch';
 
 export { UiBadge } from './components/badge';
 export type { UiBadgeProps, UiBadgeTone, UiBadgeVariant } from './components/badge';
+
+export { UiAlert } from './components/alert';
+export type { UiAlertProps, UiAlertRole, UiAlertTone, UiAlertVariant } from './components/alert';
+
+export { UiCard } from './components/card';
+export type { UiCardPadding, UiCardProps, UiCardVariant } from './components/card';
+
+export { UiProgress } from './components/progress';
+export type {
+  UiProgressProps,
+  UiProgressTone,
+  UiProgressValueFormatter,
+} from './components/progress';
+
+export { UiSpinner } from './components/spinner';
+export type { UiSpinnerProps, UiSpinnerTone } from './components/spinner';

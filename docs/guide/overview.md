@@ -14,6 +14,10 @@ Compact UI — ESM-first библиотека компонентов для Vue 
 | [`UiRadio`](/components/radio) | Типизированные radio-группы |
 | [`UiSwitch`](/components/switch) | Переключение настроек |
 | [`UiBadge`](/components/badge) | Статусы и компактные метки |
+| [`UiAlert`](/components/alert) | Статусные и срочные сообщения |
+| [`UiCard`](/components/card) | Семантические контейнеры содержимого |
+| [`UiProgress`](/components/progress) | Определённый и неопределённый прогресс |
+| [`UiSpinner`](/components/spinner) | Компактное состояние ожидания |
 
 ## Технические свойства
 

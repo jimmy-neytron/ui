@@ -1,12 +1,12 @@
 # Compact UI
 
-Лёгкая ESM-first UI-библиотека для Vue 3: четыре полностью типизированных компонента, CSS Custom Properties, светлая/тёмная/системная тема, гибкая настройка цветов, скруглений, типографики и отступов, SSR-safe реализация и проверяемый npm-процесс от playground до Trusted Publishing.
+Лёгкая ESM-first UI-библиотека для Vue 3: двенадцать полностью типизированных компонентов, CSS Custom Properties, светлая/тёмная/системная тема, гибкая настройка цветов, скруглений, типографики и отступов, SSR-safe реализация и проверяемый npm-процесс от playground до Trusted Publishing.
 
 > npm-пакет: `@neytron/compact-ui`. Исходный код: `github.com/jimmy-neytron/ui`.
 
 ## Возможности
 
-- `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`, `UiCheckbox`, `UiRadio`, `UiSwitch`, `UiBadge`.
+- `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`, `UiCheckbox`, `UiRadio`, `UiSwitch`, `UiBadge`, `UiAlert`, `UiCard`, `UiProgress`, `UiSpinner`.
 - Vue 3 Composition API и `<script setup lang="ts">`.
 - TypeScript strict mode без runtime dependencies.
 - Root imports и direct imports.
@@ -61,6 +61,10 @@ import { UiButton } from '@neytron/compact-ui/button';
 import { UiInput } from '@neytron/compact-ui/input';
 import { UiTextarea } from '@neytron/compact-ui/textarea';
 import { UiSelect } from '@neytron/compact-ui/select';
+import { UiAlert } from '@neytron/compact-ui/alert';
+import { UiCard } from '@neytron/compact-ui/card';
+import { UiProgress } from '@neytron/compact-ui/progress';
+import { UiSpinner } from '@neytron/compact-ui/spinner';
 ```
 
 Direct imports полезны, когда сборщик приложения не выполняет автоматическое tree shaking root entry.

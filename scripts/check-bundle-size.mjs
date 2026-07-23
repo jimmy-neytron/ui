@@ -6,8 +6,8 @@ const root = resolve(import.meta.dirname, '..');
 const dist = resolve(root, 'dist');
 
 const budgets = {
-  fullJs: 30 * 1024,
-  css: 12 * 1024,
+  fullJs: 38 * 1024,
+  css: 16 * 1024,
   button: 3 * 1024,
   input: 3 * 1024,
   textarea: 3 * 1024,
@@ -16,6 +16,10 @@ const budgets = {
   radio: 3 * 1024,
   switch: 3 * 1024,
   badge: 3 * 1024,
+  alert: 3 * 1024,
+  card: 3 * 1024,
+  progress: 3 * 1024,
+  spinner: 3 * 1024,
 };
 
 async function walk(directory) {
@@ -112,6 +116,10 @@ for (const [name, budget] of [
   ['radio', budgets.radio],
   ['switch', budgets.switch],
   ['badge', budgets.badge],
+  ['alert', budgets.alert],
+  ['card', budgets.card],
+  ['progress', budgets.progress],
+  ['spinner', budgets.spinner],
 ]) {
   const entryPath = resolve(dist, `components/${name}/index.js`);
   try {

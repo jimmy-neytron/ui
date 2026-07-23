@@ -38,7 +38,7 @@ jobs:
         run: npm run typecheck
 
       - name: Unit tests
-        run: npm run test
+        run: npm run test:coverage
 
       - name: Build package
         run: npm run build
@@ -50,4 +50,4 @@ jobs:
         run: npm run check:package
 
       - name: Test packed package in consumer app
-        run: npm run test:package
+        run: npm run test:coverage:package

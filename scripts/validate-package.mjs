@@ -68,6 +68,14 @@ const required = [
   'dist/components/switch/index.d.ts',
   'dist/components/badge/index.js',
   'dist/components/badge/index.d.ts',
+  'dist/components/alert/index.js',
+  'dist/components/alert/index.d.ts',
+  'dist/components/card/index.js',
+  'dist/components/card/index.d.ts',
+  'dist/components/progress/index.js',
+  'dist/components/progress/index.d.ts',
+  'dist/components/spinner/index.js',
+  'dist/components/spinner/index.d.ts',
 ];
 const forbiddenPatterns = [
   /^src\//,

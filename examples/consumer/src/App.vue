@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { UiButton, UiTextarea, type UiSelectOption, type UiSelectValue } from '@neytron/compact-ui';
+import { UiAlert, UiButton, UiCard, UiTextarea, type UiSelectOption, type UiSelectValue } from '@neytron/compact-ui';
 import { UiInput } from '@neytron/compact-ui/input';
 import { UiSelect } from '@neytron/compact-ui/select';
+import { UiProgress } from '@neytron/compact-ui/progress';
+import { UiSpinner } from '@neytron/compact-ui/spinner';
 
 const name = ref('Consumer app');
 const notes = ref('Installed from the generated npm tarball.');
@@ -16,6 +18,10 @@ const options: UiSelectOption[] = [
 <template>
   <main class="consumer" data-cui-theme="system">
     <h1>Compact UI consumer</h1>
+    <UiAlert tone="success">Packed exports work.</UiAlert>
+    <UiCard variant="filled">Consumer card</UiCard>
+    <UiProgress :value="100" label="Package validation" />
+    <UiSpinner decorative />
     <UiInput v-model="name" label="Name" clearable />
     <UiTextarea v-model="notes" label="Notes" show-count :maxlength="120" />
     <UiSelect v-model="value" label="Package check" :options="options" searchable clearable />
