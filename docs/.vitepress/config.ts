@@ -2,9 +2,31 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vitepress';
 import { injectDemoFrameSource } from './markdown/injectDemoFrameSource';
 const repositoryUrl = 'https://github.com/jimmy-neytron/ui';
+const description = 'Документация Vue 3 UI-библиотеки Compact UI';
+const siteUrl = (process.env.URL ?? '').replace(/\/$/, '');
+const socialImageUrl = `${siteUrl}/og.png`;
 export default defineConfig({
   lang: 'ru-RU', title: 'Compact UI',
-  description: 'Документация Vue 3 UI-библиотеки Compact UI',
+  description,
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['meta', { name: 'theme-color', content: '#111827' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'ru_RU' }],
+    ['meta', { property: 'og:site_name', content: 'Compact UI' }],
+    ['meta', { property: 'og:title', content: 'Compact UI — UI-компоненты для Vue 3' }],
+    ['meta', { property: 'og:description', content: description }],
+    ['meta', { property: 'og:url', content: siteUrl || '/' }],
+    ['meta', { property: 'og:image', content: socialImageUrl }],
+    ['meta', { property: 'og:image:type', content: 'image/png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:alt', content: 'Compact UI — UI-компоненты для Vue 3' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'Compact UI — UI-компоненты для Vue 3' }],
+    ['meta', { name: 'twitter:description', content: description }],
+    ['meta', { name: 'twitter:image', content: socialImageUrl }],
+  ],
   cleanUrls: true, lastUpdated: true,
   srcExclude: ['ARCHITECTURE.md', 'GIT_NPM_RELEASE_GUIDE.md'],
   markdown: {
