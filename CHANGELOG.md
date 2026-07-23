@@ -2,6 +2,20 @@
 
 Все заметные изменения документируются в этом файле. Проект следует [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-07-23
+
+### Added
+
+- 13 components: Accordion, Avatar, Breadcrumb, Dialog, Divider, DropdownMenu, EmptyState, Pagination, Popover, Skeleton, Tabs, Toast and Tooltip.
+- `UiConfigProvider` localization and `UiToastProvider` queue API.
+- SSR, RTL and reduced-motion quality checks.
+- Generated Props tables, live examples, localization guide and theme playground in documentation.
+
+### Changed
+
+- Public package exports, size budgets and consumer validation now cover all 26 components.
+- Documentation and package version updated to `0.3.0`.
+- Muted foreground contrast improved to WCAG AA in light theme.
 ## [Unreleased]
 
 ### Added

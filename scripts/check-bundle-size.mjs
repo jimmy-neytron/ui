@@ -107,20 +107,15 @@ results.push({ name: 'Full JS', ...fullJs, budget: budgets.fullJs });
 const css = await measureFiles(cssFiles);
 results.push({ name: 'CSS', ...css, budget: budgets.css });
 
-for (const [name, budget] of [
-  ['button', budgets.button],
-  ['input', budgets.input],
-  ['textarea', budgets.textarea],
-  ['select', budgets.select],
-  ['checkbox', budgets.checkbox],
-  ['radio', budgets.radio],
-  ['switch', budgets.switch],
-  ['badge', budgets.badge],
-  ['alert', budgets.alert],
-  ['card', budgets.card],
-  ['progress', budgets.progress],
-  ['spinner', budgets.spinner],
-]) {
+const componentEntries = [
+  'button', 'input', 'textarea', 'select', 'checkbox', 'radio', 'switch', 'badge',
+  'alert', 'card', 'progress', 'spinner', 'accordion', 'avatar', 'breadcrumb',
+  'config-provider', 'dialog', 'divider', 'dropdown-menu', 'empty-state', 'pagination',
+  'popover', 'skeleton', 'tabs', 'toast', 'tooltip',
+];
+
+for (const name of componentEntries) {
+  const budget = budgets[name] ?? 5 * 1024;
   const entryPath = resolve(dist, `components/${name}/index.js`);
   try {
     await stat(entryPath);

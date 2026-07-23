@@ -1,31 +1,61 @@
 # Обзор
 
-Compact UI — ESM-first библиотека компонентов для Vue 3 с TypeScript-типами и темами без отдельного runtime.
+Compact UI — ESM-first библиотека из 26 Vue 3 компонентов с TypeScript API, доступными состояниями и темами без отдельного runtime.
 
-## Что входит
+## Ввод и действия
 
 | Компонент | Назначение |
 |---|---|
-| [`UiButton`](/components/button) | Действия и loading-состояния |
+| [`UiButton`](/components/button) | Действия и loading |
 | [`UiInput`](/components/input) | Строковые и числовые поля |
-| [`UiTextarea`](/components/textarea) | Многострочный ввод и auto-resize |
+| [`UiTextarea`](/components/textarea) | Многострочный ввод |
 | [`UiSelect`](/components/select) | Одиночный/множественный выбор и поиск |
-| [`UiCheckbox`](/components/checkbox) | Boolean-выбор и indeterminate-состояние |
-| [`UiRadio`](/components/radio) | Типизированные radio-группы |
+| [`UiCheckbox`](/components/checkbox) | Boolean и indeterminate |
+| [`UiRadio`](/components/radio) | Radio-группы |
 | [`UiSwitch`](/components/switch) | Переключение настроек |
-| [`UiBadge`](/components/badge) | Статусы и компактные метки |
-| [`UiAlert`](/components/alert) | Статусные и срочные сообщения |
-| [`UiCard`](/components/card) | Семантические контейнеры содержимого |
-| [`UiProgress`](/components/progress) | Определённый и неопределённый прогресс |
-| [`UiSpinner`](/components/spinner) | Компактное состояние ожидания |
+
+## Навигация и disclosure
+
+| Компонент | Назначение |
+|---|---|
+| [`UiAccordion`](/components/accordion) | Раскрывающиеся разделы |
+| [`UiBreadcrumb`](/components/breadcrumb) | Навигационная цепочка |
+| [`UiPagination`](/components/pagination) | Постраничная навигация |
+| [`UiTabs`](/components/tabs) | Переключаемые панели |
+| [`UiDropdownMenu`](/components/dropdown-menu) | Меню действий |
+
+## Feedback и представление
+
+| Компонент | Назначение |
+|---|---|
+| [`UiBadge`](/components/badge) | Метки и статусы |
+| [`UiAlert`](/components/alert) | Сообщения в потоке страницы |
+| [`UiToast`](/components/toast) | Очередь уведомлений |
+| [`UiProgress`](/components/progress) | Progress indicator |
+| [`UiSpinner`](/components/spinner) | Компактное ожидание |
+| [`UiSkeleton`](/components/skeleton) | Placeholder контента |
+| [`UiEmptyState`](/components/empty-state) | Пустые состояния |
+| [`UiAvatar`](/components/avatar) | Изображение и инициалы пользователя |
+
+## Layout и overlay
+
+| Компонент | Назначение |
+|---|---|
+| [`UiCard`](/components/card) | Семантический контейнер |
+| [`UiDivider`](/components/divider) | Разделитель контента |
+| [`UiDialog`](/components/dialog) | Модальный сценарий |
+| [`UiPopover`](/components/popover) | Интерактивная панель |
+| [`UiTooltip`](/components/tooltip) | Короткая подсказка |
 
 ## Технические свойства
 
 - Vue `>=3.5.0 <4`, Node.js `>=24` для разработки.
-- ESM-only; Vue указана как peer dependency.
-- Root и direct imports, отдельный CSS entry.
-- SSR-safe и keyboard-first.
+- ESM-only, Vue остаётся peer dependency.
+- Root/direct imports и отдельный CSS entry.
+- SSR guards, logical CSS properties для RTL, reduced motion и keyboard-first поведение.
+- Локализация через `UiConfigProvider`; уведомления через `UiToastProvider`.
+- Props-таблицы документации генерируются из TypeScript source of truth.
 
 ## Границы
 
-В библиотеке нет общего набора иконок, шрифтов, remote search, virtualization и validation engine. Данные и ошибки приходят из приложения.
+В библиотеке нет набора иконок, шрифтов, remote search, virtualization и validation engine. Данные, бизнес-правила и ошибки остаются в приложении.

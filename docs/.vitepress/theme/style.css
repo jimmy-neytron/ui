@@ -213,3 +213,20 @@
   .demo-frame__toolbar { justify-content: space-between; }
   .demo-frame__source pre { padding: 16px; font-size: 12px; }
 }
+
+.api-table-wrap { overflow-x: auto; }
+.api-table { min-width: 42rem; }
+.api-table th, .api-table td { vertical-align: top; }
+.api-table td:nth-child(2) code { white-space: normal; overflow-wrap: anywhere; }
+.demo-inline { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.demo-surface { min-height: 8rem; padding: 1rem; border: 1px solid var(--vp-c-divider); border-radius: 0.75rem; }
+.vp-doc .api-table code { color: var(--vp-c-text-1) !important; }
+
+.vp-doc :not(pre) > code { color: var(--vp-c-text-1) !important; }
+.api-table-wrap:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 2px; }
+
+.toast-playground__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

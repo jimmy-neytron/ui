@@ -90,7 +90,7 @@ Primitive tokens: neutral `0..950`, blue/green/amber/red, `--cui-space-{0,1,2,3,
 3. Используйте component tokens только для намеренных исключений.
 4. Ставьте класс темы на ближайший общий контейнер, чтобы не менять другие части приложения.
 
-Новые component tokens версии 0.2.1:
+Component tokens, добавленные начиная с версии 0.2.1:
 
 - Checkbox/Radio: `--cui-choice-control-size`, `--cui-choice-radius`, `--cui-choice-border-color`, `--cui-choice-background`, `--cui-choice-checked-background`, `--cui-choice-checked-color`, `--cui-choice-gap`.
 - Switch: `--cui-switch-track-width`, `--cui-switch-track-height`, `--cui-switch-track-background`, `--cui-switch-track-checked-background`, `--cui-switch-thumb-color`, `--cui-switch-gap`.

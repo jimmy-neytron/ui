@@ -48,6 +48,7 @@ try {
     '--no-save',
     '--package-lock=false',
     '--ignore-scripts',
+    '--offline',
     tarballPath,
   ], consumer);
   run(['run', 'typecheck'], consumer);

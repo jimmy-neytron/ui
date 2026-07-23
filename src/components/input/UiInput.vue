@@ -2,6 +2,7 @@
 import { computed, ref, useAttrs } from 'vue';
 import IconClose from '../../internal/icons/IconClose.vue';
 import { useStableId } from '../../composables/useStableId';
+import { useUiLocale } from '../../config/locale';
 import type { UiInputModelValue, UiInputProps } from './UiInput.types';
 
 defineOptions({
@@ -28,6 +29,7 @@ const emit = defineEmits<{
 }>();
 
 const attrs = useAttrs();
+const locale = useUiLocale();
 const inputRef = ref<HTMLInputElement | null>(null);
 const inputId = useStableId('input', () =>
   typeof attrs.id === 'string' ? attrs.id : undefined,
@@ -121,7 +123,7 @@ function clearValue() {
         v-if="clearable && hasValue"
         class="cui-input__clear"
         type="button"
-        aria-label="Clear input"
+        :aria-label="locale.clearInput"
         :disabled="disabled || readonly"
         @click="clearValue"
       >

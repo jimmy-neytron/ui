@@ -45,6 +45,9 @@ if (!packResult?.filename || !Array.isArray(packResult.files)) {
 
 const tarballPath = resolve(artifacts, packResult.filename);
 const paths = packResult.files.map((file) => file.path.replaceAll('\\', '/'));
+const componentEntries = Object.keys(packageJson.exports ?? {})
+  .filter((entry) => entry.startsWith('./') && !entry.endsWith('.css') && entry !== './package.json')
+  .map((entry) => entry.slice(2));
 const required = [
   'package.json',
   'README.md',
@@ -52,30 +55,10 @@ const required = [
   'dist/index.js',
   'dist/index.d.ts',
   'dist/styles.css',
-  'dist/components/button/index.js',
-  'dist/components/button/index.d.ts',
-  'dist/components/input/index.js',
-  'dist/components/input/index.d.ts',
-  'dist/components/textarea/index.js',
-  'dist/components/textarea/index.d.ts',
-  'dist/components/select/index.js',
-  'dist/components/select/index.d.ts',
-  'dist/components/checkbox/index.js',
-  'dist/components/checkbox/index.d.ts',
-  'dist/components/radio/index.js',
-  'dist/components/radio/index.d.ts',
-  'dist/components/switch/index.js',
-  'dist/components/switch/index.d.ts',
-  'dist/components/badge/index.js',
-  'dist/components/badge/index.d.ts',
-  'dist/components/alert/index.js',
-  'dist/components/alert/index.d.ts',
-  'dist/components/card/index.js',
-  'dist/components/card/index.d.ts',
-  'dist/components/progress/index.js',
-  'dist/components/progress/index.d.ts',
-  'dist/components/spinner/index.js',
-  'dist/components/spinner/index.d.ts',
+  ...componentEntries.flatMap((component) => [
+    `dist/components/${component}/index.js`,
+    `dist/components/${component}/index.d.ts`,
+  ]),
 ];
 const forbiddenPatterns = [
   /^src\//,
