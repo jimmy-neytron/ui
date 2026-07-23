@@ -6,7 +6,12 @@ export default defineConfig({
   description: 'Документация Vue 3 UI-библиотеки Compact UI',
   cleanUrls: true, lastUpdated: true,
   srcExclude: ['ARCHITECTURE.md', 'GIT_NPM_RELEASE_GUIDE.md'],
-  vite: { resolve: { alias: { '@compact-ui': resolve(import.meta.dirname, '../../src') } } },
+  vite: {
+    resolve: {
+      alias: { '@compact-ui': resolve(import.meta.dirname, '../../src') },
+      dedupe: ['vue'],
+    },
+  },
   themeConfig: {
     siteTitle: 'Compact UI', search: { provider: 'local' },
     nav: [
