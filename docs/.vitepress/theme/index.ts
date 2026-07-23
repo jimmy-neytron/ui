@@ -2,6 +2,7 @@ import DefaultTheme from 'vitepress/theme';
 import type { Theme } from 'vitepress';
 import DemoFrame from './DemoFrame.vue';
 import ComponentGallery from './ComponentGallery.vue';
+import CustomizationDemo from './CustomizationDemo.vue';
 import '@compact-ui/styles/index.css';
 import './style.css';
 
@@ -10,5 +11,6 @@ export default {
   enhanceApp({ app }) {
     app.component('DemoFrame', DemoFrame);
     app.component('ComponentGallery', ComponentGallery);
+    app.component('CustomizationDemo', CustomizationDemo);
   },
 } satisfies Theme;

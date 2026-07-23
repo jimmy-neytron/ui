@@ -10,6 +10,10 @@ Compact UI — ESM-first библиотека компонентов для Vue 
 | [`UiInput`](/components/input) | Строковые и числовые поля |
 | [`UiTextarea`](/components/textarea) | Многострочный ввод и auto-resize |
 | [`UiSelect`](/components/select) | Одиночный/множественный выбор и поиск |
+| [`UiCheckbox`](/components/checkbox) | Boolean-выбор и indeterminate-состояние |
+| [`UiRadio`](/components/radio) | Типизированные radio-группы |
+| [`UiSwitch`](/components/switch) | Переключение настроек |
+| [`UiBadge`](/components/badge) | Статусы и компактные метки |
 
 ## Технические свойства
 

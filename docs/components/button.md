@@ -4,11 +4,63 @@ import { UiButton } from '@compact-ui';
 
 # Button
 
-Кнопка действий с вариантами, размерами и loading-состоянием.
+Кнопка для действий, форм и асинхронных состояний.
 
-<DemoFrame title="Варианты">
-  <UiButton>Primary</UiButton><UiButton variant="secondary">Secondary</UiButton>
-  <UiButton variant="ghost">Ghost</UiButton><UiButton variant="danger">Danger</UiButton>
+## Варианты
+
+<DemoFrame title="variant">
+  <div class="demo-row demo-row--center">
+    <UiButton variant="primary">Primary</UiButton>
+    <UiButton variant="secondary">Secondary</UiButton>
+    <UiButton variant="ghost">Ghost</UiButton>
+    <UiButton variant="danger">Danger</UiButton>
+  </div>
+</DemoFrame>
+
+## Размеры
+
+<DemoFrame title="size">
+  <div class="demo-row demo-row--center">
+    <UiButton size="sm">Small</UiButton>
+    <UiButton size="md">Medium</UiButton>
+    <UiButton size="lg">Large</UiButton>
+  </div>
+</DemoFrame>
+
+## Состояния и ширина
+
+<DemoFrame title="disabled, loading, block">
+  <div class="demo-stack">
+    <div class="demo-row">
+      <UiButton disabled>Disabled</UiButton>
+      <UiButton loading>Loading</UiButton>
+    </div>
+    <div class="demo-block">
+      <UiButton block>Block button</UiButton>
+    </div>
+  </div>
+</DemoFrame>
+
+## Type, aria-label и слоты
+
+<DemoFrame title="type, ariaLabel, leading, trailing, loader">
+  <div class="demo-row demo-row--center">
+    <UiButton type="submit">Submit</UiButton>
+    <UiButton type="reset" variant="secondary">Reset</UiButton>
+    <UiButton aria-label="Добавить элемент">＋</UiButton>
+    <UiButton>
+      <template #leading>←</template>
+      Назад
+    </UiButton>
+    <UiButton>
+      Далее
+      <template #trailing>→</template>
+    </UiButton>
+    <UiButton loading>
+      Загрузка
+      <template #loader>•••</template>
+    </UiButton>
+  </div>
 </DemoFrame>
 
 ## Props
@@ -23,25 +75,4 @@ import { UiButton } from '@compact-ui';
 | `block` | `boolean` | `false` | Ширина контейнера |
 | `ariaLabel` | `string` | — | Доступное имя |
 
-Остальные attrs передаются native `button`.
-
-## События
-
-| Событие | Payload | Описание |
-|---|---|---|
-| `click` | `MouseEvent` | Не вызывается при `disabled` или `loading` |
-
-## Слоты
-
-| Слот | Назначение |
-|---|---|
-| `default` | Основное содержимое |
-| `leading` / `trailing` | Контент до/после текста |
-| `loader` | Замена spinner |
-
-```vue
-<UiButton :loading="saving" @click="save">
-  <template #leading>＋</template>
-  Создать
-</UiButton>
-```
+Native attrs передаются `button`. Событие: `click(MouseEvent)`. Слоты: `default`, `leading`, `trailing`, `loader`.

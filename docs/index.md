@@ -12,8 +12,8 @@ hero:
       text: Компоненты
       link: /components/button
 features:
-  - title: Четыре основных компонента
-    details: Button, Input, Textarea и Select покрывают базовые формы без runtime-зависимостей.
+  - title: Восемь основных компонентов
+    details: Button, Input, Textarea, Select, Checkbox, Radio, Switch и Badge без runtime-зависимостей.
   - title: Строгая типизация
     details: Props, события, значения и опции доступны как публичные TypeScript-типы.
   - title: Настраиваемая тема
