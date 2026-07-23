@@ -1,0 +1,1122 @@
+{
+  "UiAccordionProps": [
+    {
+      "name": "modelValue",
+      "type": "TValue | readonly TValue[] | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "items",
+      "type": "readonly UiAccordionItem<TValue>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    }
+  ],
+  "UiAlertProps": [
+    {
+      "name": "tone",
+      "type": "UiAlertTone",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "variant",
+      "type": "UiAlertVariant",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "dismissLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "role",
+      "type": "UiAlertRole",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiAvatarProps": [
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "alt",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "shape",
+      "type": "UiAvatarShape",
+      "required": false,
+      "default": "'circle'"
+    },
+    {
+      "name": "status",
+      "type": "UiAvatarStatus",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiBadgeProps": [
+    {
+      "name": "tone",
+      "type": "UiBadgeTone",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "variant",
+      "type": "UiBadgeVariant",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiBreadcrumbProps": [
+    {
+      "name": "items",
+      "type": "UiBreadcrumbItems",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiButtonProps": [
+    {
+      "name": "variant",
+      "type": "UiButtonVariant",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiButtonSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "type",
+      "type": "ButtonHTMLAttributes['type']",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "block",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiCardProps": [
+    {
+      "name": "as",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "variant",
+      "type": "UiCardVariant",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "padding",
+      "type": "UiCardPadding",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiCheckboxProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "indeterminate",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "value",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiConfigProviderProps": [
+    {
+      "name": "locale",
+      "type": "Partial<UiLocaleMessages>",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiDialogProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiDialogSize",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "animation",
+      "type": "UiDialogAnimation",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "transitionName",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "forceMotion",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "closeOnEscape",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "closeOnBackdrop",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "showClose",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "teleport",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "closeLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiDividerProps": [
+    {
+      "name": "orientation",
+      "type": "UiDividerOrientation",
+      "required": false,
+      "default": "'horizontal'"
+    },
+    {
+      "name": "labelPosition",
+      "type": "UiDividerLabelPosition",
+      "required": false,
+      "default": "'center'"
+    }
+  ],
+  "UiDropdownMenuProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "items",
+      "type": "readonly UiDropdownMenuItem<TValue>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "placement",
+      "type": "UiOverlayPlacement",
+      "required": false,
+      "default": "'bottom'"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    }
+  ],
+  "UiEmptyStateProps": [
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "'md'"
+    }
+  ],
+  "UiInputProps": [
+    {
+      "name": "modelValue",
+      "type": "UiInputModelValue",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "type",
+      "type": "InputHTMLAttributes['type']",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "autocomplete",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "inputmode",
+      "type": "HTMLAttributes['inputmode']",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "min",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "max",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "step",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "maxlength",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "pattern",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiPaginationProps": [
+    {
+      "name": "modelValue",
+      "type": "number",
+      "required": false,
+      "default": "1"
+    },
+    {
+      "name": "total",
+      "type": "number",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "pageSize",
+      "type": "number",
+      "required": false,
+      "default": "10"
+    },
+    {
+      "name": "siblingCount",
+      "type": "number",
+      "required": false,
+      "default": "1"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiPopoverProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "placement",
+      "type": "UiOverlayPlacement",
+      "required": false,
+      "default": "'bottom'"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "closeOnEscape",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "closeOnOutside",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    }
+  ],
+  "UiProgressProps": [
+    {
+      "name": "value",
+      "type": "number | null",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "showValue",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "formatValue",
+      "type": "UiProgressValueFormatter",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "tone",
+      "type": "UiProgressTone",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiRadioProps": [
+    {
+      "name": "modelValue",
+      "type": "TValue | null",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "value",
+      "type": "TValue",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiSelectProps": [
+    {
+      "name": "modelValue",
+      "type": "UiSelectModelValue<TValue>",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "options",
+      "type": "readonly UiSelectOption<TValue>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "searchable",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "searchPlaceholder",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "noOptionsText",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "noResultsText",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "closeOnSelect",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "maxMenuHeight",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiSkeletonProps": [
+    {
+      "name": "variant",
+      "type": "UiSkeletonVariant",
+      "required": false,
+      "default": "'text'"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "default": "'100%'"
+    },
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false,
+      "default": "'1rem'"
+    },
+    {
+      "name": "lines",
+      "type": "number",
+      "required": false,
+      "default": "1"
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiSpinnerProps": [
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "tone",
+      "type": "UiSpinnerTone",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "decorative",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiSwitchProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "size",
+      "type": "UiControlSize",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiTabsProps": [
+    {
+      "name": "modelValue",
+      "type": "TValue",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "items",
+      "type": "readonly UiTabItem<TValue>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "orientation",
+      "type": "UiTabsOrientation",
+      "required": false,
+      "default": "'horizontal'"
+    },
+    {
+      "name": "activation",
+      "type": "UiTabsActivation",
+      "required": false,
+      "default": "'automatic'"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiTextareaProps": [
+    {
+      "name": "modelValue",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "maxlength",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "showCount",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "resize",
+      "type": "UiTextareaResize",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "autoResize",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiToastProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "tone",
+      "type": "UiToastTone",
+      "required": false,
+      "default": "'neutral'"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "default": "5000"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "closeLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiTooltipProps": [
+    {
+      "name": "content",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "placement",
+      "type": "UiOverlayPlacement",
+      "required": false,
+      "default": "'top'"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "required": false,
+      "default": "300"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "autoPlacement",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "boundaryPadding",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "teleport",
+      "type": "boolean",
+      "required": false,
+      "default": "—"
+    }
+  ]
+}

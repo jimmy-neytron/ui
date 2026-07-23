@@ -34,3 +34,40 @@ describe('UiCheckbox', () => {
     expect(wrapper.emitted('update:modelValue')).toBeUndefined();
   });
 });
+
+
+describe('UiCheckbox public contract', () => {
+  it('forwards every form prop, explicit id, size, and default slot', () => {
+    const wrapper = mount(UiCheckbox, {
+      props: {
+        modelValue: true, label: 'Ignored', required: true, name: 'terms',
+        value: 7, size: 'lg',
+      },
+      attrs: { id: 'terms-id' },
+      slots: { default: 'Accept terms' },
+    });
+    const input = wrapper.get('input');
+    expect(input.attributes()).toEqual(expect.objectContaining({
+      id: 'terms-id', required: '', name: 'terms', value: '7',
+    }));
+    expect(wrapper.attributes('data-size')).toBe('lg');
+    expect(wrapper.attributes('data-checked')).toBe('true');
+    expect(wrapper.get('.cui-choice__label').text()).toBe('Accept terms');
+  });
+
+  it('reactively updates checked and indeterminate DOM properties', async () => {
+    const wrapper = mount(UiCheckbox, {
+      props: { modelValue: false, indeterminate: false },
+    });
+    await wrapper.setProps({ modelValue: true, indeterminate: true });
+    const input = wrapper.get<HTMLInputElement>('input').element;
+    expect(input.checked).toBe(true);
+    expect(input.indeterminate).toBe(true);
+  });
+
+  it('omits optional content and description relation when empty', () => {
+    const wrapper = mount(UiCheckbox);
+    expect(wrapper.find('.cui-choice__content').exists()).toBe(false);
+    expect(wrapper.get('input').attributes('aria-describedby')).toBeUndefined();
+  });
+});

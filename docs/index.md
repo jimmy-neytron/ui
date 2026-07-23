@@ -1,31 +1,23 @@
 ---
 layout: home
+
 hero:
   name: Compact UI
-  text: Компоненты без лишнего слоя
-  tagline: Лёгкая типизированная UI-библиотека для Vue 3. Предсказуемый API, темы через CSS-токены и доступность из коробки.
+  text: UI-компоненты для Vue 3
+  tagline: Типизированная библиотека с единым дизайном, доступностью и понятным API.
   actions:
     - theme: brand
-      text: Начать работу
+      text: Быстрый старт
       link: /guide/getting-started
     - theme: alt
       text: Компоненты
       link: /components/button
-features:
-  - title: Восемь основных компонентов
-    details: Button, Input, Textarea, Select, Checkbox, Radio, Switch и Badge без runtime-зависимостей.
-  - title: Строгая типизация
-    details: Props, события, значения и опции доступны как публичные TypeScript-типы.
-  - title: Настраиваемая тема
-    details: Светлая, тёмная и системная темы плюс CSS Custom Properties.
----
-<DemoFrame title="Живые компоненты" description="Примеры используют текущий исходный код библиотеки."><ComponentGallery /></DemoFrame>
 
-## Быстрый старт
-```bash
-npm install @neytron/compact-ui
-```
-```ts
-import { UiButton } from '@neytron/compact-ui';
-import '@neytron/compact-ui/styles.css';
-```
+features:
+  - title: Готово для Vue 3
+    details: TypeScript-типы, Composition API и отдельные импорты компонентов.
+  - title: Настраиваемый дизайн
+    details: CSS-токены позволяют менять тему без переопределения внутренней разметки.
+  - title: Проверенное поведение
+    details: Компоненты покрыты unit-тестами и проверяются в реальном consumer-проекте.
+---

@@ -2,6 +2,7 @@
 import { computed, getCurrentInstance, nextTick, ref, useAttrs, watch } from 'vue';
 import { useClickOutside } from '../../composables/useClickOutside';
 import { useStableId } from '../../composables/useStableId';
+import { useUiLocale } from '../../config/locale';
 import IconCheck from '../../internal/icons/IconCheck.vue';
 import IconChevronDown from '../../internal/icons/IconChevronDown.vue';
 import IconClose from '../../internal/icons/IconClose.vue';
@@ -41,6 +42,7 @@ const emit = defineEmits<{
 }>();
 
 const attrs = useAttrs();
+const locale = useUiLocale();
 const instance = getCurrentInstance();
 const rootRef = ref<HTMLElement | null>(null);
 const triggerRef = ref<HTMLElement | null>(null);
@@ -413,145 +415,147 @@ watch(filteredOptions, () => {
       {{ label }}
     </label>
 
-    <div
-      v-bind="attrs"
-      :id="selectId"
-      ref="triggerRef"
-      class="cui-select__control"
-      role="combobox"
-      :tabindex="disabled ? -1 : 0"
-      aria-haspopup="listbox"
-      :aria-expanded="isOpen ? 'true' : 'false'"
-      :aria-controls="listboxId"
-      :aria-activedescendant="activeDescendant"
-      :aria-labelledby="label ? labelId : undefined"
-      :aria-label="!label ? (typeof attrs['aria-label'] === 'string' ? attrs['aria-label'] : placeholder) : undefined"
-      :aria-describedby="describedBy"
-      :aria-invalid="error ? 'true' : undefined"
-      :aria-disabled="disabled ? 'true' : undefined"
-      :aria-busy="loading ? 'true' : undefined"
-      @click="toggleMenu"
-      @keydown="handleTriggerKeydown"
-    >
-      <span v-if="$slots.prefix" class="cui-select__affix" aria-hidden="true">
-        <slot name="prefix" />
-      </span>
-
-      <div class="cui-select__value">
-        <slot
-          v-if="$slots.selected && hasSelection"
-          name="selected"
-          :options="selectedOptions"
-          :values="selectedValues"
-        />
-
-        <template v-else-if="multiple && selectedOptions.length > 0">
-          <span
-            v-for="option in selectedOptions"
-            :key="option.value"
-            class="cui-select__chip"
-          >
-            <span>{{ option.label }}</span>
-            <button
-              type="button"
-              class="cui-select__chip-remove"
-              :aria-label="`Remove ${option.label}`"
-              :disabled="disabled || loading"
-              @click.stop="removeValue(option.value)"
-            >
-              <IconClose />
-            </button>
-          </span>
-        </template>
-
-        <span v-else-if="selectedOptions[0]" class="cui-select__single-value">
-          {{ selectedOptions[0].label }}
+    <div class="cui-select__anchor">
+      <div
+        v-bind="attrs"
+        :id="selectId"
+        ref="triggerRef"
+        class="cui-select__control"
+        role="combobox"
+        :tabindex="disabled ? -1 : 0"
+        aria-haspopup="listbox"
+        :aria-expanded="isOpen ? 'true' : 'false'"
+        :aria-controls="listboxId"
+        :aria-activedescendant="activeDescendant"
+        :aria-labelledby="label ? labelId : undefined"
+        :aria-label="!label ? (typeof attrs['aria-label'] === 'string' ? attrs['aria-label'] : (placeholder ?? locale.selectOption)) : undefined"
+        :aria-describedby="describedBy"
+        :aria-invalid="error ? 'true' : undefined"
+        :aria-disabled="disabled ? 'true' : undefined"
+        :aria-busy="loading ? 'true' : undefined"
+        @click="toggleMenu"
+        @keydown="handleTriggerKeydown"
+      >
+        <span v-if="$slots.prefix" class="cui-select__affix" aria-hidden="true">
+          <slot name="prefix" />
         </span>
 
-        <span v-else class="cui-select__placeholder">{{ placeholder }}</span>
-      </div>
+        <div class="cui-select__value">
+          <slot
+            v-if="$slots.selected && hasSelection"
+            name="selected"
+            :options="selectedOptions"
+            :values="selectedValues"
+          />
 
-      <button
-        v-if="clearable && hasSelection"
-        type="button"
-        class="cui-select__clear"
-        aria-label="Clear selection"
-        :disabled="disabled || loading"
-        @click.stop="clearSelection"
-      >
-        <IconClose />
-      </button>
+          <template v-else-if="multiple && selectedOptions.length > 0">
+            <span
+              v-for="option in selectedOptions"
+              :key="option.value"
+              class="cui-select__chip"
+            >
+              <span>{{ option.label }}</span>
+              <button
+                type="button"
+                class="cui-select__chip-remove"
+                :aria-label="`${locale.removeOption} ${option.label}`"
+                :disabled="disabled || loading"
+                @click.stop="removeValue(option.value)"
+              >
+                <IconClose />
+              </button>
+            </span>
+          </template>
 
-      <span v-if="loading" class="cui-select__loader" aria-hidden="true">
-        <span class="cui-spinner" />
-      </span>
-      <span v-else-if="$slots.suffix" class="cui-select__affix" aria-hidden="true">
-        <slot name="suffix" />
-      </span>
-      <span v-else class="cui-select__chevron" aria-hidden="true">
-        <IconChevronDown />
-      </span>
-    </div>
+          <span v-else-if="selectedOptions[0]" class="cui-select__single-value">
+            {{ selectedOptions[0].label }}
+          </span>
 
-    <div v-if="isOpen" class="cui-select__menu" :style="menuStyle">
-      <div v-if="searchable" class="cui-select__search-wrap">
-        <input
-          ref="searchInputRef"
-          class="cui-select__search"
-          type="search"
-          :value="searchQuery"
-          :placeholder="searchPlaceholder"
-          aria-label="Search options"
-          :aria-controls="listboxId"
-          :aria-activedescendant="activeDescendant"
-          @input="handleSearchInput"
-          @keydown="handleSearchKeydown"
-        />
-      </div>
-
-      <div
-        :id="listboxId"
-        class="cui-select__listbox"
-        role="listbox"
-        :aria-multiselectable="multiple ? 'true' : undefined"
-      >
-        <div v-if="loading" class="cui-select__state" role="status">
-          <slot name="loading">Loading…</slot>
+          <span v-else class="cui-select__placeholder">{{ placeholder ?? locale.selectOption }}</span>
         </div>
 
-        <template v-else-if="filteredOptions.length > 0">
-          <div
-            v-for="(option, index) in filteredOptions"
-            :id="`${listboxId}-option-${index}`"
-            :key="option.value"
-            class="cui-select__option"
-            role="option"
-            :aria-selected="isSelected(option.value) ? 'true' : 'false'"
-            :aria-disabled="option.disabled ? 'true' : undefined"
-            :data-active="activeIndex === index || undefined"
-            :data-selected="isSelected(option.value) || undefined"
-            :data-disabled="option.disabled || undefined"
-            @mouseenter="!option.disabled && (activeIndex = index)"
-            @mousedown.prevent
-            @click="selectOption(option)"
-          >
-            <slot name="option" :option="option" :selected="isSelected(option.value)">
-              <span>{{ option.label }}</span>
-            </slot>
-            <span
-              v-if="isSelected(option.value)"
-              class="cui-select__check"
-              aria-hidden="true"
-            >
-              <IconCheck />
-            </span>
-          </div>
-        </template>
+        <button
+          v-if="clearable && hasSelection"
+          type="button"
+          class="cui-select__clear"
+          :aria-label="locale.clearSelection"
+          :disabled="disabled || loading"
+          @click.stop="clearSelection"
+        >
+          <IconClose />
+        </button>
 
-        <div v-else class="cui-select__state">
-          <slot name="empty" :search-query="searchQuery">
-            {{ options.length === 0 ? noOptionsText : noResultsText }}
-          </slot>
+        <span v-if="loading" class="cui-select__loader" aria-hidden="true">
+          <span class="cui-spinner" />
+        </span>
+        <span v-else-if="$slots.suffix" class="cui-select__affix" aria-hidden="true">
+          <slot name="suffix" />
+        </span>
+        <span v-else class="cui-select__chevron" aria-hidden="true">
+          <IconChevronDown />
+        </span>
+      </div>
+
+      <div v-if="isOpen" class="cui-select__menu" :style="menuStyle">
+        <div v-if="searchable" class="cui-select__search-wrap">
+          <input
+            ref="searchInputRef"
+            class="cui-select__search"
+            type="search"
+            :value="searchQuery"
+            :placeholder="searchPlaceholder ?? locale.searchOptions"
+            :aria-label="locale.searchOptions"
+            :aria-controls="listboxId"
+            :aria-activedescendant="activeDescendant"
+            @input="handleSearchInput"
+            @keydown="handleSearchKeydown"
+          />
+        </div>
+
+        <div
+          :id="listboxId"
+          class="cui-select__listbox"
+          role="listbox"
+          :aria-multiselectable="multiple ? 'true' : undefined"
+        >
+          <div v-if="loading" class="cui-select__state" role="status">
+            <slot name="loading">{{ locale.loading }}…</slot>
+          </div>
+
+          <template v-else-if="filteredOptions.length > 0">
+            <div
+              v-for="(option, index) in filteredOptions"
+              :id="`${listboxId}-option-${index}`"
+              :key="option.value"
+              class="cui-select__option"
+              role="option"
+              :aria-selected="isSelected(option.value) ? 'true' : 'false'"
+              :aria-disabled="option.disabled ? 'true' : undefined"
+              :data-active="activeIndex === index || undefined"
+              :data-selected="isSelected(option.value) || undefined"
+              :data-disabled="option.disabled || undefined"
+              @mouseenter="!option.disabled && (activeIndex = index)"
+              @mousedown.prevent
+              @click="selectOption(option)"
+            >
+              <slot name="option" :option="option" :selected="isSelected(option.value)">
+                <span>{{ option.label }}</span>
+              </slot>
+              <span
+                v-if="isSelected(option.value)"
+                class="cui-select__check"
+                aria-hidden="true"
+              >
+                <IconCheck />
+              </span>
+            </div>
+          </template>
+
+          <div v-else class="cui-select__state">
+            <slot name="empty" :search-query="searchQuery">
+              {{ options.length === 0 ? (noOptionsText ?? locale.noOptions) : (noResultsText ?? locale.noResults) }}
+            </slot>
+          </div>
         </div>
       </div>
     </div>

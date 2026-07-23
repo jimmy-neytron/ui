@@ -1,11 +1,19 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vitepress';
+import { injectDemoFrameSource } from './markdown/injectDemoFrameSource';
 const repositoryUrl = 'https://github.com/jimmy-neytron/ui';
 export default defineConfig({
   lang: 'ru-RU', title: 'Compact UI',
   description: 'Документация Vue 3 UI-библиотеки Compact UI',
   cleanUrls: true, lastUpdated: true,
   srcExclude: ['ARCHITECTURE.md', 'GIT_NPM_RELEASE_GUIDE.md'],
+  markdown: {
+    config(markdown) {
+      markdown.core.ruler.before('block', 'demo-frame-source', (state) => {
+        state.src = injectDemoFrameSource(state.src);
+      });
+    },
+  },
   vite: {
     resolve: {
       alias: { '@compact-ui': resolve(import.meta.dirname, '../../src') },
@@ -18,7 +26,7 @@ export default defineConfig({
       { text: 'Руководство', link: '/guide/getting-started' },
       { text: 'Компоненты', link: '/components/button' },
       { text: 'Темы', link: '/guide/theming' },
-      { text: 'v0.1.3', link: `${repositoryUrl}/releases` },
+      { text: 'v0.3.0', link: `${repositoryUrl}/releases` },
     ],
     sidebar: [
       { text: 'Начало работы', items: [
@@ -26,6 +34,8 @@ export default defineConfig({
         { text: 'Установка', link: '/guide/getting-started' },
         { text: 'Темы и токены', link: '/guide/theming' },
         { text: 'Доступность', link: '/guide/accessibility' },
+        { text: 'Локализация', link: '/guide/localization' },
+        { text: 'Песочница', link: '/guide/playground' },
       ] },
       { text: 'Компоненты', items: [
         { text: 'Button', link: '/components/button' },
@@ -36,6 +46,23 @@ export default defineConfig({
         { text: 'Radio', link: '/components/radio' },
         { text: 'Switch', link: '/components/switch' },
         { text: 'Badge', link: '/components/badge' },
+        { text: 'Alert', link: '/components/alert' },
+        { text: 'Card', link: '/components/card' },
+        { text: 'Progress', link: '/components/progress' },
+        { text: 'Spinner', link: '/components/spinner' },
+        { text: 'Accordion', link: '/components/accordion' },
+        { text: 'Avatar', link: '/components/avatar' },
+        { text: 'Breadcrumb', link: '/components/breadcrumb' },
+        { text: 'Dialog', link: '/components/dialog' },
+        { text: 'Divider', link: '/components/divider' },
+        { text: 'DropdownMenu', link: '/components/dropdown-menu' },
+        { text: 'EmptyState', link: '/components/empty-state' },
+        { text: 'Pagination', link: '/components/pagination' },
+        { text: 'Popover', link: '/components/popover' },
+        { text: 'Skeleton', link: '/components/skeleton' },
+        { text: 'Tabs', link: '/components/tabs' },
+        { text: 'Toast', link: '/components/toast' },
+        { text: 'Tooltip', link: '/components/tooltip' },
       ] },
     ],
     socialLinks: [{ icon: 'github', link: repositoryUrl }],

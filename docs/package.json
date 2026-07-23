@@ -1,19 +1,19 @@
 {
-  "name": "@neytron/compact-ui-docs",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vitepress dev .",
-    "build": "vitepress build .",
-    "preview": "vitepress preview ."
-  },
-  "dependencies": {
-    "@neytron/compact-ui": "file:..",
-    "vue": "3.5.40"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "vitepress": "^1.6.4"
-  }
+    "name":  "@neytron/compact-ui-docs",
+    "version":  "0.0.0",
+    "private":  true,
+    "type":  "module",
+    "scripts":  {
+                    "dev":  "node ../scripts/generate-api-docs.mjs \u0026\u0026 vitepress dev .",
+                    "build":  "node ../scripts/generate-api-docs.mjs \u0026\u0026 vitepress build .",
+                    "preview":  "vitepress preview ."
+                },
+    "dependencies":  {
+                         "@neytron/compact-ui":  "file:..",
+                         "vue":  "3.5.40"
+                     },
+    "devDependencies":  {
+                            "typescript":  "^5.9.3",
+                            "vitepress":  "^1.6.4"
+                        }
 }

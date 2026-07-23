@@ -47,5 +47,11 @@ export default tseslint.config(
       'vue/multi-word-component-names': 'off',
     },
   },
-);
+  {
+    files: ['**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      'vue/one-component-per-file': 'off',
+    },
+  },);
 

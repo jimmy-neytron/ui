@@ -2,10 +2,32 @@
 
 Все заметные изменения документируются в этом файле. Проект следует [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-07-23
+
+### Added
+
+- 13 components: Accordion, Avatar, Breadcrumb, Dialog, Divider, DropdownMenu, EmptyState, Pagination, Popover, Skeleton, Tabs, Toast and Tooltip.
+- `UiConfigProvider` localization and `UiToastProvider` queue API.
+- SSR, RTL and reduced-motion quality checks.
+- Generated Props tables, live examples, localization guide and theme playground in documentation.
+
+### Changed
+
+- Public package exports, size budgets and consumer validation now cover all 26 components.
+- Documentation and package version updated to `0.3.0`.
+- Muted foreground contrast improved to WCAG AA in light theme.
 ## [Unreleased]
+
+### Added
+
+- Added automatically generated source panels and clipboard actions to every documentation example.
+- Added UiAlert, UiCard, UiProgress, and UiSpinner with typed direct exports.
+- Expanded the suite to 150 unit tests covering public props, slots, events, accessibility, protected states, and edge cases.
+- Enforced coverage thresholds in local checks and CI: 100% statements/lines/functions and 99% branches.
 
 ### Fixed
 
+- Anchored the UiSelect dropdown to its control so hint and error rows no longer push the menu downward.
 - Added TypeScript path mapping for the playground source alias.
 - Made npm child-process scripts reliable on Windows by invoking the active npm CLI through Node.js.
 - Made `UiSelect` close synchronously after a keyboard selection while restoring focus on the next tick.
@@ -42,6 +64,7 @@
 
 ### Added
 
+- Added automatically generated source panels and clipboard actions to every documentation example.
 - `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`.
 - Светлая, тёмная и системная темы.
 - Root/direct exports, CSS entry и TypeScript declarations.
