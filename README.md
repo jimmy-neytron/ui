@@ -6,7 +6,7 @@
 
 ## Возможности
 
-- `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`.
+- `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`, `UiCheckbox`, `UiRadio`, `UiSwitch`, `UiBadge`.
 - Vue 3 Composition API и `<script setup lang="ts">`.
 - TypeScript strict mode без runtime dependencies.
 - Root imports и direct imports.

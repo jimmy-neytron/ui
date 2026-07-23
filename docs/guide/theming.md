@@ -42,3 +42,60 @@ import '@neytron/compact-ui/styles.css';
 | Прочее | `--cui-opacity-disabled`, `--cui-opacity-loading`, `--cui-z-dropdown` |
 
 Primitive tokens: neutral `0..950`, blue/green/amber/red, `--cui-space-{0,1,2,3,4,5,6,8}`, font size/weight/line-height, radius `1..3`/pill, duration/easing.
+
+## Живая локальная тема
+
+Токены наследуются как обычные CSS Custom Properties. Поэтому можно настроить всё приложение, отдельный продуктовый раздел или один компонент.
+
+<DemoFrame title="Интерактивная кастомизация" description="Цвет и радиус применяются только внутри preview.">
+  <CustomizationDemo />
+</DemoFrame>
+
+```css
+.checkout-theme {
+  /* Семантика продукта */
+  --cui-color-primary: #7c3aed;
+  --cui-color-primary-hover: #6d28d9;
+  --cui-color-primary-subtle: rgb(124 58 237 / 14%);
+  --cui-color-focus: #7c3aed;
+
+  /* Общая плотность контролов */
+  --cui-control-font-size-md: 0.875rem;
+  --cui-control-padding-block-md: 0.5rem;
+
+  /* Точечные component tokens */
+  --cui-button-radius: 999px;
+  --cui-input-radius: 10px;
+  --cui-choice-checked-background: #7c3aed;
+  --cui-switch-track-checked-background: #7c3aed;
+  --cui-badge-radius: 6px;
+}
+```
+
+```vue
+<template>
+  <section class="checkout-theme">
+    <UiInput v-model="email" label="Email" />
+    <UiCheckbox v-model="accepted" label="Согласен с условиями" />
+    <UiSwitch v-model="notifications" label="Уведомления" />
+    <UiButton>Оплатить</UiButton>
+  </section>
+</template>
+```
+
+## Иерархия настройки
+
+1. Переопределяйте semantic tokens (`color`, `surface`, `border`) для общей темы.
+2. Используйте control tokens для единой плотности `sm/md/lg`.
+3. Используйте component tokens только для намеренных исключений.
+4. Ставьте класс темы на ближайший общий контейнер, чтобы не менять другие части приложения.
+
+Новые component tokens версии 0.2.1:
+
+- Checkbox/Radio: `--cui-choice-control-size`, `--cui-choice-radius`, `--cui-choice-border-color`, `--cui-choice-background`, `--cui-choice-checked-background`, `--cui-choice-checked-color`, `--cui-choice-gap`.
+- Switch: `--cui-switch-track-width`, `--cui-switch-track-height`, `--cui-switch-track-background`, `--cui-switch-track-checked-background`, `--cui-switch-thumb-color`, `--cui-switch-gap`.
+- Badge: `--cui-badge-radius`, `--cui-badge-font-size`, `--cui-badge-padding-block`, `--cui-badge-padding-inline`, `--cui-badge-gap`.
+
+::: warning
+После изменения цветов проверьте контраст текста, focus ring и состояния disabled в светлой и тёмной теме.
+:::

@@ -20,6 +20,24 @@
 
 - Positioning adapter для select menu без изменения public API.
 
+
+## [0.2.1] - 2026-07-23
+
+### Added
+
+- `UiCheckbox` with controlled, indeterminate, disabled, required, description, and size states.
+- `UiRadio` with typed string/number values and native group semantics.
+- `UiSwitch` with native checkbox behavior and the accessible switch role.
+- `UiBadge` with tones, variants, sizes, dot, and leading content.
+- Direct package exports and bundle budgets for every new component.
+- Unit tests and searchable documentation pages for the new public API.
+- Interactive documentation for local theme and component-token overrides.
+
+### Changed
+
+- Expanded the public CSS token hierarchy for choices, switches, and badges.
+- Updated the package and documentation version to `0.2.1`.
+
 ## [0.1.0] - 2026-07-22
 
 ### Added

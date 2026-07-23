@@ -18,3 +18,14 @@ export type {
 } from './components/select';
 
 export type { UiControlSize } from './types/common.types';
+export { UiCheckbox } from './components/checkbox';
+export type { UiCheckboxProps } from './components/checkbox';
+
+export { UiRadio } from './components/radio';
+export type { UiRadioProps, UiRadioValue } from './components/radio';
+
+export { UiSwitch } from './components/switch';
+export type { UiSwitchProps } from './components/switch';
+
+export { UiBadge } from './components/badge';
+export type { UiBadgeProps, UiBadgeTone, UiBadgeVariant } from './components/badge';

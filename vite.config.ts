@@ -8,6 +8,10 @@ const entry = {
   'components/input/index': resolve(import.meta.dirname, 'src/components/input/index.ts'),
   'components/textarea/index': resolve(import.meta.dirname, 'src/components/textarea/index.ts'),
   'components/select/index': resolve(import.meta.dirname, 'src/components/select/index.ts'),
+  'components/checkbox/index': resolve(import.meta.dirname, 'src/components/checkbox/index.ts'),
+  'components/radio/index': resolve(import.meta.dirname, 'src/components/radio/index.ts'),
+  'components/switch/index': resolve(import.meta.dirname, 'src/components/switch/index.ts'),
+  'components/badge/index': resolve(import.meta.dirname, 'src/components/badge/index.ts'),
   styles: resolve(import.meta.dirname, 'scripts/styles-entry.ts'),
 };
 

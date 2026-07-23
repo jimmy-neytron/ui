@@ -71,6 +71,27 @@
   --cui-select-search-padding-inline: var(--cui-space-2);
   --cui-select-menu-max-height: 15rem;
   --cui-select-menu-shadow: var(--cui-shadow-md);
+
+  --cui-choice-control-size: 1.125rem;
+  --cui-choice-radius: var(--cui-radius-sm);
+  --cui-choice-border-color: var(--cui-color-border-strong);
+  --cui-choice-background: var(--cui-color-surface);
+  --cui-choice-checked-background: var(--cui-color-primary);
+  --cui-choice-checked-color: var(--cui-color-text-on-primary);
+  --cui-choice-gap: var(--cui-space-2);
+
+  --cui-switch-track-width: 2.25rem;
+  --cui-switch-track-height: 1.25rem;
+  --cui-switch-track-background: var(--cui-color-border-strong);
+  --cui-switch-track-checked-background: var(--cui-color-primary);
+  --cui-switch-thumb-color: var(--cui-neutral-0);
+  --cui-switch-gap: var(--cui-space-2);
+
+  --cui-badge-radius: var(--cui-radius-pill);
+  --cui-badge-font-size: var(--cui-font-size-xs);
+  --cui-badge-padding-block: var(--cui-space-1);
+  --cui-badge-padding-inline: var(--cui-space-2);
+  --cui-badge-gap: var(--cui-space-1);
 }
 
 [data-cui-theme='dark'] {

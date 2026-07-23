@@ -60,6 +60,14 @@ const required = [
   'dist/components/textarea/index.d.ts',
   'dist/components/select/index.js',
   'dist/components/select/index.d.ts',
+  'dist/components/checkbox/index.js',
+  'dist/components/checkbox/index.d.ts',
+  'dist/components/radio/index.js',
+  'dist/components/radio/index.d.ts',
+  'dist/components/switch/index.js',
+  'dist/components/switch/index.d.ts',
+  'dist/components/badge/index.js',
+  'dist/components/badge/index.d.ts',
 ];
 const forbiddenPatterns = [
   /^src\//,
