@@ -80,6 +80,7 @@ export default defineConfig({
         { text: 'DropdownMenu', link: '/components/dropdown-menu' },
         { text: 'EmptyState', link: '/components/empty-state' },
         { text: 'Pagination', link: '/components/pagination' },
+        { text: 'DataTable', link: '/components/data-table' },
         { text: 'Popover', link: '/components/popover' },
         { text: 'Skeleton', link: '/components/skeleton' },
         { text: 'Tabs', link: '/components/tabs' },

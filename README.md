@@ -58,6 +58,7 @@ const roles = [
   `UiSkeleton`, `UiSpinner`, `UiEmptyState`, `UiAvatar`.
 - Навигация: `UiAccordion`, `UiBreadcrumb`, `UiPagination`, `UiTabs`,
   `UiDropdownMenu`.
+- Таблицы: `UiDataTable`, `UiDataTableFilters`.
 - Оверлеи: `UiDialog`, `UiPopover`, `UiTooltip`.
 - Уведомления: `UiToast`, `UiToastProvider`, `useToast`.
 - Настройка: `UiConfigProvider`.
