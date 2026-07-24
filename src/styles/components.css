@@ -270,7 +270,7 @@
   padding: 0;
   border: 0;
   outline: 0;
-  color: var(--cui-color-text);
+  color: var(--cui-input-color);
   background: transparent;
 }
 
@@ -347,8 +347,8 @@
   border: 1px solid var(--cui-input-border-color);
   border-radius: var(--cui-textarea-radius);
   outline: 0;
-  color: var(--cui-color-text);
-  background: var(--cui-input-background);
+  color: var(--cui-textarea-color);
+  background: var(--cui-textarea-background);
   font-size: var(--cui-textarea-font-size);
   line-height: var(--cui-line-height-normal);
   transition: border-color var(--cui-duration-fast) var(--cui-easing-standard);
@@ -389,8 +389,8 @@
   padding-inline: var(--cui-select-padding-inline);
   border: 1px solid var(--cui-input-border-color);
   border-radius: var(--cui-select-radius);
-  color: var(--cui-color-text);
-  background: var(--cui-input-background);
+  color: var(--cui-select-color);
+  background: var(--cui-select-background);
   font-size: var(--cui-select-font-size);
   cursor: pointer;
   transition:
@@ -512,7 +512,7 @@
   overflow: hidden;
   border: 1px solid var(--cui-color-border);
   border-radius: var(--cui-select-radius);
-  background: var(--cui-color-surface);
+  background: var(--cui-select-menu-background);
   box-shadow: var(--cui-select-menu-shadow);
 }
 
@@ -528,8 +528,8 @@
   border: 1px solid var(--cui-input-border-color);
   border-radius: var(--cui-radius-sm);
   outline: 0;
-  color: var(--cui-color-text);
-  background: var(--cui-color-surface-subtle);
+  color: var(--cui-select-color);
+  background: var(--cui-select-search-background);
 }
 
 .cui-select__search:focus-visible {
@@ -554,7 +554,7 @@
 }
 
 .cui-select__option[data-active='true'] {
-  background: var(--cui-color-surface-hover);
+  background: var(--cui-select-option-background-hover);
 }
 
 .cui-select__option[data-selected='true'] {

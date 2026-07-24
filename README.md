@@ -98,6 +98,20 @@ import { UiSelect } from '@neytron/compact-ui/select';
 Цвета, размеры и скругления настраиваются через CSS Custom Properties:
 
 ```css
+[data-cui-theme='light'] {
+  --cui-input-background: #ffffff;
+  --cui-input-color: #171513;
+  --cui-select-background: #ffffff;
+  --cui-select-menu-background: #ffffff;
+}
+
+[data-cui-theme='dark'] {
+  --cui-input-background: #171717;
+  --cui-input-color: #f2f2f2;
+  --cui-select-background: #171717;
+  --cui-select-menu-background: #111111;
+}
+
 .product-theme {
   --cui-color-primary: #7c3aed;
   --cui-color-primary-hover: #6d28d9;

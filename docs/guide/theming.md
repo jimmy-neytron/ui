@@ -47,9 +47,9 @@ import '@neytron/compact-ui/styles.css';
 | Радиусы | `--cui-radius-sm`, `--cui-radius-md`, `--cui-radius-lg` |
 | Размеры | `--cui-control-font-size-{sm,md,lg}`, `--cui-control-padding-block-{sm,md,lg}`, `--cui-control-padding-inline-{sm,md,lg}`, `--cui-control-gap` |
 | Button | `--cui-button-radius`, `--cui-button-font-size`, `--cui-button-padding-block`, `--cui-button-padding-inline` |
-| Input | `--cui-input-radius`, `--cui-input-font-size`, `--cui-input-padding-block`, `--cui-input-padding-inline`, `--cui-input-background`, `--cui-input-border-color`, `--cui-input-border-color-hover`, `--cui-input-placeholder-color` |
-| Textarea | `--cui-textarea-min-height`, `--cui-textarea-radius`, `--cui-textarea-font-size`, `--cui-textarea-padding-block`, `--cui-textarea-padding-inline` |
-| Select | `--cui-select-radius`, `--cui-select-font-size`, `--cui-select-padding-block`, `--cui-select-padding-inline`, `--cui-select-option-padding-block`, `--cui-select-option-padding-inline`, `--cui-select-search-padding-block`, `--cui-select-search-padding-inline`, `--cui-select-menu-max-height`, `--cui-select-menu-shadow` |
+| Input | `--cui-input-color`, `--cui-input-background`, `--cui-input-border-color`, `--cui-input-border-color-hover`, `--cui-input-placeholder-color`, `--cui-input-radius`, `--cui-input-font-size`, `--cui-input-padding-block`, `--cui-input-padding-inline` |
+| Textarea | `--cui-textarea-color`, `--cui-textarea-background`, `--cui-textarea-min-height`, `--cui-textarea-radius`, `--cui-textarea-font-size`, `--cui-textarea-padding-block`, `--cui-textarea-padding-inline` |
+| Select | `--cui-select-color`, `--cui-select-background`, `--cui-select-menu-background`, `--cui-select-search-background`, `--cui-select-option-background-hover`, `--cui-select-radius`, `--cui-select-font-size`, `--cui-select-padding-block`, `--cui-select-padding-inline`, `--cui-select-option-padding-block`, `--cui-select-option-padding-inline`, `--cui-select-search-padding-block`, `--cui-select-search-padding-inline`, `--cui-select-menu-max-height`, `--cui-select-menu-shadow` |
 | Прочее | `--cui-opacity-disabled`, `--cui-opacity-loading`, `--cui-z-dropdown` |
 
 Primitive tokens: neutral `0..950`, blue/green/amber/red, `--cui-space-{0,1,2,3,4,5,6,8}`, font size/weight/line-height, radius `1..3`/pill, duration/easing.
