@@ -1,6 +1,6 @@
 {
     "name": "@neytron/compact-ui",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "description": "Lightweight and customizable Vue 3 UI component library",
     "type": "module",
     "license": "MIT",
@@ -115,6 +115,10 @@
         "./pagination": {
             "types": "./dist/components/pagination/index.d.ts",
             "import": "./dist/components/pagination/index.js"
+        },
+        "./data-table": {
+            "types": "./dist/components/data-table/index.d.ts",
+            "import": "./dist/components/data-table/index.js"
         },
         "./popover": {
             "types": "./dist/components/popover/index.d.ts",

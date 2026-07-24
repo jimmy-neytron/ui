@@ -81,6 +81,14 @@
   --cui-badge-padding-block: var(--cui-space-1);
   --cui-badge-padding-inline: var(--cui-space-2);
   --cui-badge-gap: var(--cui-space-1);
+
+  --cui-data-table-radius: var(--cui-radius-lg);
+  --cui-data-table-font-size: var(--cui-font-size-md);
+  --cui-data-table-cell-padding-block: var(--cui-space-3);
+  --cui-data-table-cell-padding-inline: var(--cui-space-4);
+  --cui-data-table-header-font-size: var(--cui-font-size-xs);
+  --cui-data-table-row-min-height: 2.75rem;
+  --cui-data-table-max-height: none;
 }
 
 /* Theme-dependent component tokens must be resolved on the theme container. */
@@ -111,6 +119,27 @@
   --cui-switch-track-background: var(--cui-color-border-strong);
   --cui-switch-track-checked-background: var(--cui-color-primary);
   --cui-switch-thumb-color: var(--cui-neutral-0);
+
+  --cui-data-table-color: var(--cui-color-text);
+  --cui-data-table-muted-color: var(--cui-color-text-muted);
+  --cui-data-table-background: var(--cui-color-surface);
+  --cui-data-table-header-background: var(--cui-color-surface-subtle);
+  --cui-data-table-row-hover-background: var(--cui-color-surface-hover);
+  --cui-data-table-row-striped-background: color-mix(
+    in srgb,
+    var(--cui-color-surface-subtle) 72%,
+    var(--cui-color-surface)
+  );
+  --cui-data-table-border-color: var(--cui-color-border);
+  --cui-data-table-sort-color: var(--cui-color-primary);
+  --cui-data-table-filter-count-background: var(--cui-color-primary);
+  --cui-data-table-filter-count-color: var(--cui-color-text-on-primary);
+  --cui-data-table-sticky-background: var(--cui-data-table-background);
+  --cui-data-table-sticky-shadow-color: color-mix(
+    in srgb,
+    var(--cui-color-text) 18%,
+    transparent
+  );
 }
 
 [data-cui-theme='dark'] {

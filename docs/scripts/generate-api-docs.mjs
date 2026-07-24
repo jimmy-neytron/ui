@@ -9,6 +9,8 @@ const defaults = {
   UiAccordionProps: { modelValue: 'null', multiple: 'false', collapsible: 'true' },
   UiAvatarProps: { size: "'md'", shape: "'circle'" },
   UiDialogProps: { modelValue: 'false', size: "'md'", teleport: 'true', closeOnEscape: 'true', closeOnBackdrop: 'true', showClose: 'true' },
+  UiDataTableProps: { sort: 'null', filters: '{}', page: '1', pageSize: '10', pagination: 'true', manualSorting: 'false', manualFiltering: 'false', manualPagination: 'false', loading: 'false', striped: 'false', hoverable: 'true', stickyHeader: 'false', dense: 'false', bordered: 'false', tableLayout: "'auto'", filterable: 'true', filterDialogTeleport: 'true', lazy: 'false', hasMore: 'true', loadingMore: 'false', lazyThreshold: '96' },
+  UiDataTableFiltersProps: { modelValue: 'false', filters: '{}', teleport: 'true' },
   UiDividerProps: { orientation: "'horizontal'", labelPosition: "'center'" },
   UiDropdownMenuProps: { modelValue: 'false', placement: "'bottom'", disabled: 'false' },
   UiEmptyStateProps: { size: "'md'" },

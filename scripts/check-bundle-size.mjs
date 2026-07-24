@@ -6,7 +6,7 @@ const root = resolve(import.meta.dirname, '..');
 const dist = resolve(root, 'dist');
 
 const budgets = {
-  fullJs: 38 * 1024,
+  fullJs: 44 * 1024,
   css: 16 * 1024,
   button: 3 * 1024,
   input: 3 * 1024,
@@ -20,6 +20,7 @@ const budgets = {
   card: 3 * 1024,
   progress: 3 * 1024,
   spinner: 3 * 1024,
+  dataTable: 18 * 1024,
 };
 
 async function walk(directory) {
@@ -111,11 +112,12 @@ const componentEntries = [
   'button', 'input', 'textarea', 'select', 'checkbox', 'radio', 'switch', 'badge',
   'alert', 'card', 'progress', 'spinner', 'accordion', 'avatar', 'breadcrumb',
   'config-provider', 'dialog', 'divider', 'dropdown-menu', 'empty-state', 'pagination',
-  'popover', 'skeleton', 'tabs', 'toast', 'tooltip',
+  'data-table', 'popover', 'skeleton', 'tabs', 'toast', 'tooltip',
 ];
 
 for (const name of componentEntries) {
-  const budget = budgets[name] ?? 5 * 1024;
+  const budgetKey = name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+  const budget = budgets[budgetKey] ?? 5 * 1024;
   const entryPath = resolve(dist, `components/${name}/index.js`);
   try {
     await stat(entryPath);

@@ -269,6 +269,298 @@
       "default": "—"
     }
   ],
+  "UiDataTableProps": [
+    {
+      "name": "rows",
+      "type": "readonly TRow[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "columns",
+      "type": "readonly UiDataTableColumn<TRow>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "rowKey",
+      "type": "UiDataTableRowKey<TRow>",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "sort",
+      "type": "UiDataTableSort | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "filters",
+      "type": "UiDataTableFilterValues",
+      "required": false,
+      "default": "{}"
+    },
+    {
+      "name": "page",
+      "type": "number",
+      "required": false,
+      "default": "1"
+    },
+    {
+      "name": "pageSize",
+      "type": "number",
+      "required": false,
+      "default": "10"
+    },
+    {
+      "name": "total",
+      "type": "number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "pagination",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "manualSorting",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "manualFiltering",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "manualPagination",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "striped",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "hoverable",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "stickyHeader",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "dense",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "bordered",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "maxHeight",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "tableMinWidth",
+      "type": "string | number",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "tableLayout",
+      "type": "UiDataTableLayout",
+      "required": false,
+      "default": "'auto'"
+    },
+    {
+      "name": "rowClass",
+      "type": "UiDataTableRowClass<TRow>",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "caption",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "filterable",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "filterDialogTeleport",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "lazy",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "hasMore",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "loadingMore",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "lazyThreshold",
+      "type": "number",
+      "required": false,
+      "default": "96"
+    },
+    {
+      "name": "labels",
+      "type": "Partial<UiDataTableLabels>",
+      "required": false,
+      "default": "—"
+    }
+  ],
+  "UiDataTableFiltersProps": [
+    {
+      "name": "modelValue",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "columns",
+      "type": "readonly UiDataTableColumn<TRow>[]",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "filters",
+      "type": "UiDataTableFilterValues",
+      "required": false,
+      "default": "{}"
+    },
+    {
+      "name": "labels",
+      "type": "Partial<UiDataTableLabels>",
+      "required": false,
+      "default": "—"
+    },
+    {
+      "name": "teleport",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    }
+  ],
+  "UiDataTableFilterSlotProps": [
+    {
+      "name": "column",
+      "type": "UiDataTableColumn<TRow>",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "value",
+      "type": "unknown",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "setValue",
+      "type": "(value: unknown) => void",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "filters",
+      "type": "Readonly<UiDataTableFilterValues>",
+      "required": true,
+      "default": "—"
+    }
+  ],
+  "UiDataTableCellSlotProps": [
+    {
+      "name": "row",
+      "type": "TRow",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "column",
+      "type": "UiDataTableColumn<TRow>",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "value",
+      "type": "unknown",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "rowIndex",
+      "type": "number",
+      "required": true,
+      "default": "—"
+    }
+  ],
+  "UiDataTableHeaderSlotProps": [
+    {
+      "name": "column",
+      "type": "UiDataTableColumn<TRow>",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "sort",
+      "type": "UiDataTableSort | null",
+      "required": true,
+      "default": "—"
+    },
+    {
+      "name": "toggleSort",
+      "type": "() => void",
+      "required": true,
+      "default": "—"
+    }
+  ],
   "UiDialogProps": [
     {
       "name": "modelValue",

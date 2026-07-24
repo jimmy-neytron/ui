@@ -8,6 +8,7 @@ Compact UI — ESM-first библиотека из 26 Vue 3 компоненто
 |---|---|
 | [`UiButton`](/components/button) | Действия и loading |
 | [`UiInput`](/components/input) | Строковые и числовые поля |
+| [`UiDataTable`](/components/data-table) | Таблицы с сортировкой, фильтрами и пагинацией |
 | [`UiTextarea`](/components/textarea) | Многострочный ввод |
 | [`UiSelect`](/components/select) | Одиночный/множественный выбор и поиск |
 | [`UiCheckbox`](/components/checkbox) | Boolean и indeterminate |

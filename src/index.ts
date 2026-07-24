@@ -63,6 +63,41 @@ export { UiEmptyState } from './components/empty-state';
 export type { UiEmptyStateProps } from './components/empty-state';
 export { UiPagination } from './components/pagination';
 export type { UiPaginationProps } from './components/pagination';
+export {
+  defaultUiDataTableLabels,
+  filterDataTableRows,
+  getDataTableCellValue,
+  isDataTableFilterActive,
+  sortDataTableRows,
+  UiDataTable,
+  UiDataTableFilters,
+  useDataTable,
+} from './components/data-table';
+export type {
+  UiDataTableAlign,
+  UiDataTableCellSlotProps,
+  UiDataTableColumn,
+  UiDataTableCustomFilter,
+  UiDataTableFiltersProps,
+  UiDataTableFilterSlotProps,
+  UiDataTableFilterValue,
+  UiDataTableFilterValues,
+  UiDataTableHeaderSlotProps,
+  UiDataTableLabels,
+  UiDataTableLayout,
+  UiDataTableLoadMoreContext,
+  UiDataTableNumberRange,
+  UiDataTableNumberRangeFilter,
+  UiDataTableProps,
+  UiDataTableRowKey,
+  UiDataTableRowClass,
+  UiDataTableSelectFilter,
+  UiDataTableSort,
+  UiDataTableSortDirection,
+  UiDataTableSticky,
+  UiDataTableTextFilter,
+  UseDataTableOptions,
+} from './components/data-table';
 export { UiPopover } from './components/popover';
 export type { UiPopoverProps } from './components/popover';
 export { UiSkeleton } from './components/skeleton';

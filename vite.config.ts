@@ -25,6 +25,7 @@ const entry = {
   'components/dropdown-menu/index': resolve(import.meta.dirname, 'src/components/dropdown-menu/index.ts'),
   'components/empty-state/index': resolve(import.meta.dirname, 'src/components/empty-state/index.ts'),
   'components/pagination/index': resolve(import.meta.dirname, 'src/components/pagination/index.ts'),
+  'components/data-table/index': resolve(import.meta.dirname, 'src/components/data-table/index.ts'),
   'components/popover/index': resolve(import.meta.dirname, 'src/components/popover/index.ts'),
   'components/skeleton/index': resolve(import.meta.dirname, 'src/components/skeleton/index.ts'),
   'components/tabs/index': resolve(import.meta.dirname, 'src/components/tabs/index.ts'),
