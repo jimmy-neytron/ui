@@ -33,7 +33,7 @@ const options: UiSelectOption[] = [
       <UiButton>Сохранить</UiButton>
       <UiButton variant="secondary">Отмена</UiButton>
       <UiButton variant="ghost">Подробнее</UiButton>
-      <UiBadge tone="success" dot>v0.3.0</UiBadge>
+      <UiBadge tone="success" dot>v0.3.2</UiBadge>
     </div>
     <UiAlert tone="success" title="Готово">Все компоненты подключены.</UiAlert>
     <UiCard variant="filled">Карточка использует общие токены темы.</UiCard>
