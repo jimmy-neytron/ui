@@ -50,10 +50,6 @@
   --cui-input-font-size: var(--cui-control-font-size-md);
   --cui-input-padding-block: var(--cui-control-padding-block-md);
   --cui-input-padding-inline: var(--cui-control-padding-inline-md);
-  --cui-input-background: var(--cui-color-surface);
-  --cui-input-border-color: var(--cui-color-border);
-  --cui-input-border-color-hover: var(--cui-color-border-strong);
-  --cui-input-placeholder-color: var(--cui-color-text-muted);
 
   --cui-textarea-min-height: 6rem;
   --cui-textarea-radius: var(--cui-radius-md);
@@ -74,17 +70,10 @@
 
   --cui-choice-control-size: 1.125rem;
   --cui-choice-radius: var(--cui-radius-sm);
-  --cui-choice-border-color: var(--cui-color-border-strong);
-  --cui-choice-background: var(--cui-color-surface);
-  --cui-choice-checked-background: var(--cui-color-primary);
-  --cui-choice-checked-color: var(--cui-color-text-on-primary);
   --cui-choice-gap: var(--cui-space-2);
 
   --cui-switch-track-width: 2.25rem;
   --cui-switch-track-height: 1.25rem;
-  --cui-switch-track-background: var(--cui-color-border-strong);
-  --cui-switch-track-checked-background: var(--cui-color-primary);
-  --cui-switch-thumb-color: var(--cui-neutral-0);
   --cui-switch-gap: var(--cui-space-2);
 
   --cui-badge-radius: var(--cui-radius-pill);
@@ -92,6 +81,36 @@
   --cui-badge-padding-block: var(--cui-space-1);
   --cui-badge-padding-inline: var(--cui-space-2);
   --cui-badge-gap: var(--cui-space-1);
+}
+
+/* Theme-dependent component tokens must be resolved on the theme container. */
+:root,
+[data-cui-theme='light'],
+[data-cui-theme='dark'],
+[data-cui-theme='system'] {
+  --cui-input-color: var(--cui-color-text);
+  --cui-input-background: var(--cui-color-surface);
+  --cui-input-border-color: var(--cui-color-border);
+  --cui-input-border-color-hover: var(--cui-color-border-strong);
+  --cui-input-placeholder-color: var(--cui-color-text-muted);
+
+  --cui-textarea-color: var(--cui-input-color);
+  --cui-textarea-background: var(--cui-input-background);
+
+  --cui-select-color: var(--cui-input-color);
+  --cui-select-background: var(--cui-input-background);
+  --cui-select-menu-background: var(--cui-color-surface);
+  --cui-select-search-background: var(--cui-color-surface-subtle);
+  --cui-select-option-background-hover: var(--cui-color-surface-hover);
+
+  --cui-choice-border-color: var(--cui-color-border-strong);
+  --cui-choice-background: var(--cui-color-surface);
+  --cui-choice-checked-background: var(--cui-color-primary);
+  --cui-choice-checked-color: var(--cui-color-text-on-primary);
+
+  --cui-switch-track-background: var(--cui-color-border-strong);
+  --cui-switch-track-checked-background: var(--cui-color-primary);
+  --cui-switch-thumb-color: var(--cui-neutral-0);
 }
 
 [data-cui-theme='dark'] {
