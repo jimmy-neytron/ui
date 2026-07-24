@@ -64,6 +64,13 @@ describe('data table processing', () => {
     expect(filterDataTableRows(rows, columns, { role: ['dev'] })).toEqual([rows[1], rows[2]]);
     expect(filterDataTableRows(rows, columns, { role: 'dev', age: { min: 30 } }))
       .toEqual([rows[1]]);
+    expect(filterDataTableRows(rows, [{
+      key: 'name',
+      label: 'Name',
+      filter: { type: 'text', caseSensitive: true },
+    }], { name: rows[0]!.name.slice(0, 1) })).toEqual([rows[0]]);
+    expect(filterDataTableRows(rows, columns, { age: { max: 25 } })).toEqual([rows[2]]);
+    expect(filterDataTableRows(rows, columns, { age: { min: 35 } })).toEqual([]);
   });
 
   it('supports custom predicates', () => {
@@ -92,6 +99,8 @@ describe('data table processing', () => {
     }];
     expect(sortDataTableRows(rows, comparatorColumns, { key: 'name', direction: 'asc' })[0])
       .toBe(rows[0]);
+    expect(sortDataTableRows(rows, columns, null)).toEqual(rows);
+    expect(sortDataTableRows(rows, columns, { key: 'missing', direction: 'asc' })).toEqual(rows);
   });
 
   it('provides reactive filtering, sorting and pagination', () => {

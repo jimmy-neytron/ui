@@ -190,9 +190,87 @@ describe('UiDataTable', () => {
     });
 
     await wrapper.findAll('tbody tr')[0]!.trigger('click');
+    await wrapper.findAll('tbody tr')[0]!.trigger('dblclick');
     expect(wrapper.emitted('row-click')?.[0]?.[0]).toEqual(rows[0]);
+    expect(wrapper.emitted('row-dblclick')?.[0]?.[0]).toEqual(rows[0]);
     expect(wrapper.get('[data-toolbar]').text()).toBe('Tools');
     expect(wrapper.get('[data-footer]').text()).toBe('Footer');
+  });
+
+  it('supports custom headers, filter slots, state slots and imperative lazy loading', async () => {
+    const wrapper = mount(UiDataTable<Row>, {
+      props: {
+        rows,
+        columns,
+        rowKey: (row) => `person-${row.id}`,
+        maxHeight: '20rem',
+        lazy: true,
+        hasMore: true,
+        filterDialogTeleport: false,
+      },
+      slots: {
+        'header-name': '<template #header-name="{ toggleSort }"><button data-custom-header @click="toggleSort">Custom</button></template>',
+        filter: '<template #filter="{ value, setValue }"><button data-custom-filter @click="setValue(`custom`)">{{ value }}</button></template>',
+        'loading-more': '<template #loading-more="{ loadMore }"><button data-custom-more @click="loadMore">More</button></template>',
+      },
+    });
+    await nextTick();
+
+    expect(wrapper.get('.cui-data-table__scroll').attributes('style')).toContain('20rem');
+    expect(wrapper.findAll('tbody tr')[0]!.attributes('data-v-app')).toBeUndefined();
+    await wrapper.get('[data-custom-header]').trigger('click');
+    expect(wrapper.emitted('update:sort')?.[0]).toEqual([{ key: 'name', direction: 'asc' }]);
+
+    await wrapper.get('.cui-data-table__toolbar .cui-button').trigger('click');
+    await wrapper.get('[data-custom-filter]').trigger('click');
+    await wrapper.findAll('.cui-dialog__footer .cui-button').at(-1)!.trigger('click');
+    expect(wrapper.emitted('update:filters')?.[0]).toEqual([{ name: 'custom' }]);
+
+    const before = wrapper.emitted('load-more')?.length ?? 0;
+    await wrapper.get('[data-custom-more]').trigger('click');
+    expect(wrapper.emitted('load-more')).toHaveLength(before + 1);
+    (wrapper.vm as unknown as { checkLazyLoad: () => void }).checkLazyLoad();
+    expect(wrapper.emitted('load-more')).toHaveLength(before + 2);
+  });
+
+  it('covers scroll guards, string row keys, pagination and custom states', async () => {
+    const wrapper = mount(UiDataTable<Row>, {
+      props: {
+        rows,
+        columns,
+        rowKey: 'id',
+        total: 30,
+        manualPagination: true,
+        pageSize: 2,
+        maxHeight: 180,
+      },
+    });
+
+    const scroll = wrapper.get('.cui-data-table__scroll').element as HTMLElement;
+    Object.defineProperties(scroll, {
+      scrollHeight: { configurable: true, value: 1000 },
+      clientHeight: { configurable: true, value: 100 },
+      scrollTop: { configurable: true, value: 0 },
+    });
+    await wrapper.get('.cui-data-table__scroll').trigger('scroll');
+    await wrapper.get('[aria-label="Next page"]').trigger('click');
+    expect(wrapper.emitted('update:page')?.at(-1)).toEqual([2]);
+
+    await wrapper.setProps({ loading: true });
+    expect(wrapper.attributes('aria-busy')).toBe('true');
+    await wrapper.setProps({ loading: false, rows: [], total: 0 });
+    expect(wrapper.text()).toContain('No matching rows');
+
+    const states = mount(UiDataTable<Row>, {
+      props: { rows: [], columns: [], loading: true },
+      slots: {
+        loading: '<span data-loading>Custom loading</span>',
+        empty: '<span data-empty>Custom empty</span>',
+      },
+    });
+    expect(states.get('[data-loading]').text()).toBe('Custom loading');
+    await states.setProps({ loading: false });
+    expect(states.get('[data-empty]').text()).toBe('Custom empty');
   });
 
   it('applies filters from the separate dialog', async () => {
@@ -247,5 +325,64 @@ describe('UiDataTableFilters', () => {
     });
     expect(wrapper.get('.cui-data-table__toolbar .cui-button').text()).toContain('Фильтры');
     expect(wrapper.text()).toContain('Ничего нет');
+  });
+
+  it('edits text, single and multiple selects, number bounds, then closes and applies', async () => {
+    const filterColumns: UiDataTableColumn<Row>[] = [
+      { key: 'name', label: 'Name', filter: { type: 'text' } },
+      {
+        key: 'role',
+        label: 'Role',
+        filter: {
+          type: 'select',
+          multiple: true,
+          options: [{ label: 'Dev', value: 'dev' }],
+        },
+      },
+      {
+        key: 'id',
+        label: 'ID',
+        filter: {
+          type: 'select',
+          options: [{ label: 'One', value: 1 }],
+        },
+      },
+      {
+        key: 'age',
+        label: 'Age',
+        filter: { type: 'number-range', min: 18, max: 80, step: 1 },
+      },
+    ];
+    const wrapper = mount(UiDataTableFilters<Row>, {
+      props: {
+        modelValue: true,
+        columns: filterColumns,
+        filters: { name: 42, role: 'invalid', id: [], age: 'invalid' },
+        teleport: false,
+      },
+    });
+
+    const inputs = wrapper.findAll('.cui-input__native');
+    await inputs[0]!.setValue('Anna');
+    await inputs[1]!.setValue('20');
+    await inputs[2]!.setValue('');
+    await wrapper.findAll('.cui-dialog__footer .cui-button').at(-1)!.trigger('click');
+
+    expect(wrapper.emitted('apply')).toBeTruthy();
+    expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual([false]);
+  });
+
+  it('clones arrays and ranges when opening and forwards dialog closing', async () => {
+    const wrapper = mount(UiDataTableFilters<Row>, {
+      props: {
+        modelValue: false,
+        columns,
+        filters: { role: ['dev'], age: { min: 20, max: 40 } },
+        teleport: false,
+      },
+    });
+    await wrapper.setProps({ modelValue: true });
+    await wrapper.get('.cui-dialog__close').trigger('click');
+    expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual([false]);
   });
 });
