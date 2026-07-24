@@ -120,7 +120,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-cui-theme]),
   [data-cui-theme='system'] {
     color-scheme: dark;
     --cui-color-background: #070707;
